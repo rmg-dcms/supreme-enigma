@@ -4,8 +4,8 @@ pipeline {
     stage ("Clean Up Stage") {
       steps {
         sh "echo \"cleaning up...\""
-        sh "docker stop fl"
-        sh "docker rm fl"
+        sh "docker stop fl || true"
+        sh "docker rm fl || true"
       }
     }
     stage ("Set Up Stage") {
