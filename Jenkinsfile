@@ -29,7 +29,7 @@ pipeline {
       }
     }
     stage ("Unit Test") {
-      sh "python test.py"
+      sh "python3 test.py"
     }
   }
 }
