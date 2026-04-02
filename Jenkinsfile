@@ -31,11 +31,13 @@ pipeline {
     }
     stage ("Unit Test") {
       steps {
-        def ret = sh returnStatus: true, script: "python3 test.py"
-        if (ret == 0) {
-          sh "echo \"Success\""
-        } else {
-          sh "echo \"Failed\""
+        script {
+          def ret = sh returnStatus: true, script: "python3 test.py"
+          if (ret == 0) {
+            sh "echo \"Success\""
+          } else {
+            sh "echo \"Failed\""
+          }
         }
       }
     }
