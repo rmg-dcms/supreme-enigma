@@ -3,14 +3,14 @@ pipeline {
   stages {
     stage ("Clean Up Stage") {
       steps {
-        sh "echo \"cleaning up...\""
+        echo "Cleaning up..."
         sh "docker stop fl || true"
         sh "docker rm fl || true"
       }
     }
     stage ("Set Up Stage") {
       steps {
-        sh "echo \"setting up...\""
+        echo "Setting up..."
       }
     }
     stage ("Trivy Filesystem Scan") {
