@@ -35,7 +35,7 @@ pipeline {
         if (ret == 0) {
           sh "echo \"Success\""
         } else {
-          sh echo \"Failed\""
+          sh "echo \"Failed\""
         }
       }
     }
