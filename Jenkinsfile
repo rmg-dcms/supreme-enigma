@@ -11,6 +11,7 @@ pipeline {
     stage ("Set Up Stage") {
       steps {
         echo "Setting up..."
+        sh "curl localhost"
       }
     }
     stage ("Trivy Filesystem Scan") {
