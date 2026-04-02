@@ -3,10 +3,12 @@ pipeline {
   stages {
     stage ("Clean Up Stage") {
       steps {
+        sh "echo \"cleaning up...\""
       }
     }
     stage ("Set Up Stage") {
       steps {
+        sh "echo \"setting up...\""
       }
     }
     stage ("Build images") {
