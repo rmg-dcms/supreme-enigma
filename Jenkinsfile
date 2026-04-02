@@ -16,7 +16,7 @@ pipeline {
     stage ("Trivy Filesystem Scan") {
       steps {
         sh "trivy fs / -f json -o trivy_result.json"
-        archiveArtifacts artifacts: 'trivy-results.json', followSymlinks: false
+        archiveArtifacts artifacts: 'trivy-result.json', followSymlinks: false
       }
     }
     stage ("Build images") {
