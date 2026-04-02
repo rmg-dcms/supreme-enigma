@@ -8,4 +8,4 @@
 docker build -t flask-app .
 
 //Run the container
-docker run -d -p 80:5500 --name fl flask-app
+docker run -d --name fl flask-app
