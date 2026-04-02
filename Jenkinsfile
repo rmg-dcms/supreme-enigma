@@ -32,6 +32,15 @@ pipeline {
     stage ("Unit Test") {
       steps {
         sh "curl localhost"
+        sh '''
+          echo "=== NETWORK DEBUG ==="
+          hostname -I || true
+          netstat -tulnp || ss -tulnp || true
+          
+          echo "=== TRY BOTH ==="
+          curl -v 127.0.0.1 || true
+          curl -v localhost || true
+        '''
         sh "python3 test.py"
         //sh returnStatus: true, script: "python3 test.py"
         //script {
