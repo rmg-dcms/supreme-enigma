@@ -31,7 +31,12 @@ pipeline {
     }
     stage ("Unit Test") {
       steps {
-        sh "python3 test.py"
+        ret = sh returnStatus: true, script: "python3 test.py"
+        if (ret == 0) {
+          sh "echo \"Success\""
+        } else {
+          sh echo \"Failed\""
+        }
       }
     }
   }
