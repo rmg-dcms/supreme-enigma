@@ -1,5 +1,5 @@
 # Use Python 3.6 or later as a base image
-FROM python:3.6
+FROM python:3.8
 
 # Copy contents into image
 COPY app.py .
