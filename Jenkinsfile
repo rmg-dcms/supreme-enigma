@@ -31,7 +31,8 @@ pipeline {
     }
     stage ("Unit Test") {
       steps {
-        sh returnStatus: true, script: "python3 test.py"
+        sh "python3 test.py"
+        //sh returnStatus: true, script: "python3 test.py"
         //script {
           //def ret = sh returnStatus: true, script: "python3 test.py"
           //if (ret == 0) {
