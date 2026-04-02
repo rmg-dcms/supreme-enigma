@@ -3,7 +3,7 @@ FROM python:3.6
 
 # Copy contents into image
 COPY app.py .
-COPY nginx.conf .
+#COPY nginx.conf .
 COPY requirements.txt .
 
 # Install pip dependencies from requirements
