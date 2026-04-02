@@ -1,4 +1,5 @@
 pipeline {
+  AGENT ANY
   stages {
     stage "Clean Up Stage" {
       steps {
