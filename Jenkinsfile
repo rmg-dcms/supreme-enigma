@@ -11,7 +11,6 @@ pipeline {
     stage ("Set Up Stage") {
       steps {
         echo "Setting up..."
-        sh "curl localhost"
       }
     }
     stage ("Trivy Filesystem Scan") {
@@ -32,6 +31,7 @@ pipeline {
     }
     stage ("Unit Test") {
       steps {
+        sh "curl localhost"
         sh "python3 test.py"
         //sh returnStatus: true, script: "python3 test.py"
         //script {
