@@ -31,7 +31,6 @@ pipeline {
     }
     stage ("Unit Test") {
       steps {
-        sh "curl localhost"
         sh '''
           echo "=== NETWORK DEBUG ==="
           hostname -I || true
