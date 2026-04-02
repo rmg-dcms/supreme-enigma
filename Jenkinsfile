@@ -13,6 +13,11 @@ pipeline {
         sh "echo \"setting up...\""
       }
     }
+    stage ("Trivy Filesystem Scan") {
+      steps {
+        sh "trivy fs / -f json -o trivy_result.json"
+      }
+    }
     stage ("Build images") {
       steps {
         sh "docker build -t flask-app ."
@@ -22,6 +27,9 @@ pipeline {
       steps {
         sh "docker run -d -p 80:5500 --name fl flask-app"
       }
+    }
+    stage ("Unit Test") {
+      sh "python test.py"
     }
   }
 }
